@@ -1,0 +1,12 @@
+C:\C#\moderno\moderno\Lojinha\Lojinha\bin\Debug\Lojinha.exe.config
+C:\C#\moderno\moderno\Lojinha\Lojinha\bin\Debug\Lojinha.exe
+C:\C#\moderno\moderno\Lojinha\Lojinha\bin\Debug\Lojinha.pdb
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.csproj.AssemblyReference.cache
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.FrmPrincipal.resources
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.Properties.Resources.resources
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.csproj.GenerateResource.cache
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.csproj.CoreCompileInputs.cache
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.exe
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.pdb
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.Forms.FrmProdutos.resources
+C:\C#\moderno\moderno\Lojinha\Lojinha\obj\Debug\Lojinha.Forms.FrmCaixa.resources
