@@ -29,8 +29,13 @@ namespace Lojinha
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnCategorias = new System.Windows.Forms.Button();
+            this.btnFornecedores = new System.Windows.Forms.Button();
+            this.btnCargos = new System.Windows.Forms.Button();
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.btnCaixa = new System.Windows.Forms.Button();
@@ -46,15 +51,35 @@ namespace Lojinha
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelDesktoppane = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.statusBar = new System.Windows.Forms.ToolStrip();
+            this.data = new System.Windows.Forms.ToolStripLabel();
+            this.statusData = new System.Windows.Forms.ToolStripLabel();
+            this.hora = new System.Windows.Forms.ToolStripLabel();
+            this.statusHora = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.username = new System.Windows.Forms.ToolStripLabel();
+            this.StatusLabel_username = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.lblCargo = new System.Windows.Forms.ToolStripLabel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            this.panelDesktoppane.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
+            this.panelMenu.Controls.Add(this.btnLogout);
+            this.panelMenu.Controls.Add(this.btnCategorias);
+            this.panelMenu.Controls.Add(this.btnFornecedores);
+            this.panelMenu.Controls.Add(this.btnCargos);
             this.panelMenu.Controls.Add(this.btnFuncionarios);
             this.panelMenu.Controls.Add(this.btnRelatorio);
             this.panelMenu.Controls.Add(this.btnCaixa);
@@ -66,8 +91,76 @@ namespace Lojinha
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 523);
+            this.panelMenu.Size = new System.Drawing.Size(220, 664);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = global::Lojinha.Properties.Resources.icons8_logout_50;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(0, 680);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(220, 60);
+            this.btnLogout.TabIndex = 12;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategorias.FlatAppearance.BorderSize = 0;
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.ForeColor = System.Drawing.Color.White;
+            this.btnCategorias.Image = global::Lojinha.Properties.Resources.icons8_list_50;
+            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.Location = new System.Drawing.Point(0, 620);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(220, 60);
+            this.btnCategorias.TabIndex = 11;
+            this.btnCategorias.Text = "     Categorias";
+            this.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            // 
+            // btnFornecedores
+            // 
+            this.btnFornecedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFornecedores.FlatAppearance.BorderSize = 0;
+            this.btnFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFornecedores.ForeColor = System.Drawing.Color.White;
+            this.btnFornecedores.Image = global::Lojinha.Properties.Resources.icons8_supplier_50__1_1;
+            this.btnFornecedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFornecedores.Location = new System.Drawing.Point(0, 560);
+            this.btnFornecedores.Name = "btnFornecedores";
+            this.btnFornecedores.Size = new System.Drawing.Size(220, 60);
+            this.btnFornecedores.TabIndex = 10;
+            this.btnFornecedores.Text = "     Fornecedores";
+            this.btnFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFornecedores.UseVisualStyleBackColor = true;
+            this.btnFornecedores.Click += new System.EventHandler(this.btnFornecedores_Click);
+            // 
+            // btnCargos
+            // 
+            this.btnCargos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCargos.FlatAppearance.BorderSize = 0;
+            this.btnCargos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargos.ForeColor = System.Drawing.Color.White;
+            this.btnCargos.Image = global::Lojinha.Properties.Resources.icons8_team_30;
+            this.btnCargos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargos.Location = new System.Drawing.Point(0, 500);
+            this.btnCargos.Name = "btnCargos";
+            this.btnCargos.Size = new System.Drawing.Size(220, 60);
+            this.btnCargos.TabIndex = 8;
+            this.btnCargos.Text = "         Cargos";
+            this.btnCargos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCargos.UseVisualStyleBackColor = true;
+            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
             // 
             // btnFuncionarios
             // 
@@ -152,7 +245,6 @@ namespace Lojinha
             this.btnClientes.Text = "    Clientes";
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnUsuarios
             // 
@@ -205,13 +297,13 @@ namespace Lojinha
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(58, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 24);
+            this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "LOJINHA";
+            this.label1.Text = "LOJA";
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(193)))), ((int)(((byte)(242)))));
+            this.panelTitleBar.BackColor = System.Drawing.Color.Black;
             this.panelTitleBar.Controls.Add(this.btnMaximizar);
             this.panelTitleBar.Controls.Add(this.btnClose);
             this.panelTitleBar.Controls.Add(this.btnMinimizar);
@@ -231,11 +323,11 @@ namespace Lojinha
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximizar.ForeColor = System.Drawing.Color.White;
-            this.btnMaximizar.Location = new System.Drawing.Point(608, 24);
+            this.btnMaximizar.Image = global::Lojinha.Properties.Resources.icons8_square_50;
+            this.btnMaximizar.Location = new System.Drawing.Point(585, 24);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(75, 34);
+            this.btnMaximizar.Size = new System.Drawing.Size(55, 37);
             this.btnMaximizar.TabIndex = 4;
-            this.btnMaximizar.Text = "O";
             this.btnMaximizar.UseVisualStyleBackColor = true;
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
@@ -243,14 +335,14 @@ namespace Lojinha
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(667, 24);
+            this.btnClose.Location = new System.Drawing.Point(686, 24);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 34);
+            this.btnClose.Size = new System.Drawing.Size(44, 42);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "O";
+            this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -261,11 +353,11 @@ namespace Lojinha
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizar.Location = new System.Drawing.Point(553, 24);
+            this.btnMinimizar.Location = new System.Drawing.Point(621, 0);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(75, 34);
+            this.btnMinimizar.Size = new System.Drawing.Size(75, 68);
             this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.Text = "O";
+            this.btnMinimizar.Text = "__";
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
@@ -293,19 +385,117 @@ namespace Lojinha
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "HOME";
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // panelDesktoppane
             // 
+            this.panelDesktoppane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(6)))), ((int)(((byte)(6)))));
+            this.panelDesktoppane.Controls.Add(this.pictureBox1);
+            this.panelDesktoppane.Controls.Add(this.statusBar);
             this.panelDesktoppane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktoppane.Location = new System.Drawing.Point(220, 80);
             this.panelDesktoppane.Name = "panelDesktoppane";
-            this.panelDesktoppane.Size = new System.Drawing.Size(742, 443);
+            this.panelDesktoppane.Size = new System.Drawing.Size(742, 584);
             this.panelDesktoppane.TabIndex = 2;
+            this.panelDesktoppane.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktoppane_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::Lojinha.Properties.Resources.png_20230615_191351_0000;
+            this.pictureBox1.Location = new System.Drawing.Point(-102, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(927, 532);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // statusBar
+            // 
+            this.statusBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.statusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.data,
+            this.statusData,
+            this.hora,
+            this.statusHora,
+            this.toolStripSeparator1,
+            this.username,
+            this.StatusLabel_username,
+            this.toolStripSeparator2,
+            this.toolStripLabel1,
+            this.lblCargo});
+            this.statusBar.Location = new System.Drawing.Point(0, 559);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(742, 25);
+            this.statusBar.TabIndex = 2;
+            // 
+            // data
+            // 
+            this.data.Name = "data";
+            this.data.Size = new System.Drawing.Size(44, 22);
+            this.data.Text = "Data:";
+            // 
+            // statusData
+            // 
+            this.statusData.Name = "statusData";
+            this.statusData.Size = new System.Drawing.Size(85, 22);
+            this.statusData.Text = "01/01/2023";
+            // 
+            // hora
+            // 
+            this.hora.Name = "hora";
+            this.hora.Size = new System.Drawing.Size(45, 22);
+            this.hora.Text = "Hora:";
+            // 
+            // statusHora
+            // 
+            this.statusHora.Name = "statusHora";
+            this.statusHora.Size = new System.Drawing.Size(63, 22);
+            this.statusHora.Text = "00:00:00";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // username
+            // 
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(62, 22);
+            this.username.Text = "Usuário:";
+            // 
+            // StatusLabel_username
+            // 
+            this.StatusLabel_username.Name = "StatusLabel_username";
+            this.StatusLabel_username.Size = new System.Drawing.Size(80, 22);
+            this.StatusLabel_username.Text = "nome_user";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(56, 22);
+            this.toolStripLabel1.Text = "Cargo: ";
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(80, 22);
+            this.lblCargo.Text = "user_cargo";
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 523);
+            this.ClientSize = new System.Drawing.Size(962, 664);
             this.Controls.Add(this.panelDesktoppane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -319,6 +509,11 @@ namespace Lojinha
             this.panelLogo.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            this.panelDesktoppane.ResumeLayout(false);
+            this.panelDesktoppane.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.statusBar.ResumeLayout(false);
+            this.statusBar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -339,9 +534,26 @@ namespace Lojinha
         private System.Windows.Forms.Panel panelDesktoppane;
         private System.Windows.Forms.Button btnFuncionarios;
         private System.Windows.Forms.Button btnCloseChildForm;
-        private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnCargos;
+        private System.Windows.Forms.ToolStrip statusBar;
+        private System.Windows.Forms.ToolStripLabel data;
+        private System.Windows.Forms.ToolStripLabel statusData;
+        private System.Windows.Forms.ToolStripLabel hora;
+        private System.Windows.Forms.ToolStripLabel statusHora;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel username;
+        private System.Windows.Forms.ToolStripLabel StatusLabel_username;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel lblCargo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnFornecedores;
+        private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Button btnMaximizar;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
 

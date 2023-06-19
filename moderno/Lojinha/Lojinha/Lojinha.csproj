@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexao.cs" />
     <Compile Include="EntryPointAttribute.cs" />
     <Compile Include="Forms\FrmCaixa.cs">
       <SubType>Form</SubType>
@@ -53,11 +58,23 @@
     <Compile Include="Forms\FrmCaixa.Designer.cs">
       <DependentUpon>FrmCaixa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmClientes.cs">
+    <Compile Include="Forms\FrmCargos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FrmClientes.Designer.cs">
-      <DependentUpon>FrmClientes.cs</DependentUpon>
+    <Compile Include="Forms\FrmCargos.Designer.cs">
+      <DependentUpon>FrmCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCategoria.Designer.cs">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFornecedores.Designer.cs">
+      <DependentUpon>FrmFornecedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmFuncionarios.cs">
       <SubType>Form</SubType>
@@ -89,20 +106,52 @@
     <Compile Include="Forms\FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeColor.cs" />
+    <Compile Include="Verificar.cs" />
     <EmbeddedResource Include="Forms\FrmCaixa.resx">
       <DependentUpon>FrmCaixa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCargos.resx">
+      <DependentUpon>FrmCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFornecedores.resx">
+      <DependentUpon>FrmFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFuncionarios.resx">
+      <DependentUpon>FrmFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMovimentacoes.resx">
+      <DependentUpon>FrmMovimentacoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProdutos.resx">
       <DependentUpon>FrmProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRelatorios.resx">
+      <DependentUpon>FrmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -153,6 +202,56 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-close-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-check-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocupado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfil2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-square-50.png" />
+    <None Include="Resources\icons8-logout-50.png" />
+    <None Include="Resources\icons8-maximize-50 %282%291.png" />
+    <None Include="Resources\icons8-maximize-50 %282%29.png" />
+    <None Include="Resources\icons8-maximize-50 %281%29.png" />
+    <None Include="Resources\icons8-maximize-50.png" />
+    <None Include="Resources\icons8-close-50 %281%29.png" />
+    <None Include="Resources\icons8-exit-48.png" />
+    <None Include="Resources\icons8-list-50.png" />
+    <None Include="Resources\icons8-supplier-50 %281%291.png" />
+    <None Include="Resources\icons8-supplier-50 %281%29.png" />
+    <None Include="Resources\icons8-supplier-50.png" />
+    <None Include="Resources\My project-1 %287%29.png" />
+    <None Include="Resources\user9.png" />
+    <None Include="Resources\img6.png" />
+    <None Include="Resources\icons8-upload1.gif" />
+    <None Include="Resources\icons8-upload.gif" />
+    <None Include="Resources\icons8-user-64 %281%29.png" />
+    <None Include="Resources\Icone-usuario-Png-1024x1024 %281%29.png" />
+    <None Include="Resources\png_20230615_191351_0000.png" />
+    <None Include="Resources\20230615_184841_0000.png" />
+    <None Include="Resources\12-sPx13ICSI-transformed.png" />
+    <None Include="Resources\addProduct.png" />
+    <Content Include="Resources\Bitmap1.bmp" />
+    <None Include="Resources\My project-1 %281%29.png" />
+    <None Include="Resources\reject %281%29.png" />
+    <None Include="Resources\reject.png" />
+    <None Include="Resources\password.png" />
+    <None Include="Resources\user %282%29.png" />
+    <None Include="Resources\icons8-user-64.png" />
+    <None Include="Resources\icons8-user-24.png" />
+    <None Include="Resources\icons8-team-30.png" />
+    <None Include="Resources\icons8-team-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

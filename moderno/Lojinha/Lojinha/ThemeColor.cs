@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Lojinha
 
@@ -15,21 +16,8 @@ namespace Lojinha
 
         public static List<string> ColorList = new List<string>()
         {
-            "#73378C",
-            "#245CA6",
-            "#72C1F2",
-            "#80D2F2",
-            "#D9B341",
-            "#D9501E",
-            "#D94436",
-            "#8C2727",
-            "#BF4572",
-            "#F205B3",
-            "#93BFB7",
-            "#736A6A",
-            "#0FC2C0",
-            "#0CABA8",
-            "#023535",
+            "#000",
+            "#000"
 
         };
 
@@ -55,6 +43,8 @@ namespace Lojinha
 
             return Color.FromArgb(color.A, (byte)red, (byte)green, (byte)blue);
         }
+
+
 
     }//
 }

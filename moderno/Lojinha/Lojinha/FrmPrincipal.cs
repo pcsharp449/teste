@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Lojinha
 {
     public partial class FrmPrincipal : Form
@@ -36,7 +35,11 @@ namespace Lojinha
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            statusData.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            statusHora.Text = DateTime.Now.ToString("HH:mm:ss");//para não ficar estática
 
+            StatusLabel_username.Text = Verificar.NomeUser;
+            lblCargo.Text = Verificar.CargoUser;
         }
         //Redimencionamento
         [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
@@ -130,19 +133,13 @@ namespace Lojinha
 
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            //chmar o metodo ativar botao
-            // ActivateButton(sender);
-            openChildForm(new Forms.FrmClientes(), sender);
-
-        }
+       
 
         private void btnMovimentacoes_Click(object sender, EventArgs e)
         {
             //chmar o metodo ativar botao
             //ActivateButton(sender);
-            openChildForm(new Forms.FrmMovimentacoes(), sender);
+            //openChildForm(new Forms.FrmMovimentacoes(), sender);
 
         }
 
@@ -158,7 +155,7 @@ namespace Lojinha
         {
             //chmar o metodo ativar botao
             // ActivateButton(sender);
-            openChildForm(new Forms.FrmRelatorios(), sender);
+           // openChildForm(new Forms.FrmRelatorios(), sender);
 
         }
 
@@ -181,8 +178,8 @@ namespace Lojinha
         {
             DisableButton();
             lblTitle.Text = "HOME";
-            panelTitleBar.BackColor = Color.FromArgb(114, 193, 242);
-            panelLogo.BackColor = Color.FromArgb(64, 64, 64);
+            panelTitleBar.BackColor = Color.Black;
+            panelLogo.BackColor = Color.Black;
             currentButton = null;
             btnCloseChildForm.Visible = false;
         }
@@ -196,7 +193,11 @@ namespace Lojinha
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var res = MessageBox.Show("Deseja realmente fechar ?", "Fechar", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(res == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
 
         }
 
@@ -220,6 +221,49 @@ namespace Lojinha
 
             }
 
+        }
+
+        private void btnCargos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Forms.Cargos(), sender);
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            statusData.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            statusHora.Text = DateTime.Now.ToString("HH:mm:ss");//para não ficar estática
+        }
+
+        private void panelDesktoppane_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            //chmar o metodo ativar botao
+            // ActivateButton(sender);
+            openChildForm(new Forms.FrmFornecedores(), sender);
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            //chmar o metodo ativar botao
+            // ActivateButton(sender);
+            openChildForm(new Forms.FrmCategoria(), sender);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Deseja realmente sair? ", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if(res == DialogResult.Yes)
+            {
+                openChildForm(new Forms.FrmCategoria(), sender);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
